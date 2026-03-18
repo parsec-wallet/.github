@@ -1,8 +1,8 @@
-# PARSEC Wallet GitHub Organization — AI Ingestion README / Prompt
+# PARSEC Wallet GitHub Organization — Ingestion README / Prompt
 
 > **Purpose**
 >
-> This document is a polished, Claude-ready ingestion prompt and quick-reference catalog for the GitHub organization at `parsec-wallet`.
+> This document is a polished, machine-ready ingestion prompt and quick-reference catalog for the GitHub organization at `parsec-wallet`.
 > It is designed to help an AI system rapidly understand the repository landscape, identify architectural themes, and extract reusable patterns for a sovereign, universal wallet platform.
 
 ---
