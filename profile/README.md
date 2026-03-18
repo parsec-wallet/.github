@@ -1,4 +1,4 @@
-# PARSEC Wallet GitHub Organization — Ingestion README / Prompt
+# PARSEC Wallet GitHub Organization — README.prompt
 
 > **Purpose**
 >
@@ -24,7 +24,7 @@ This makes the org valuable not only as a code source, but as an **AI-ingestible
 
 ---
 
-## 2. Claude Prompt
+## 2. claude.prompt
 
 Copy the following prompt into Claude exactly as-is, then attach or paste repository material as needed.
 
