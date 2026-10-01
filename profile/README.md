@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/parsec-mark.png" width="96" height="96" alt="The Parsec mark: a gold delta inside an orbital ring">
+  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/parsec-mark.png" width="96" height="96" alt="The PARSEC mark: a gold delta inside an orbital ring">
 </p>
 
 <h1 align="center">PARSEC</h1>
@@ -27,12 +27,12 @@
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/landing.png" width="860" alt="The Parsec landing: a live market pyramid ranked by the selected period, floating price glyphs, and the overlay toggles">
+  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/landing.png" width="860" alt="The PARSEC landing: a live market pyramid ranked by the selected period, floating price glyphs, and the overlay toggles">
 </p>
 
-## Parsec, in a paragraph
+## PARSEC, in a paragraph
 
-Parsec is a desktop wallet that treats your keys as yours alone. It is **Algorand first**, with
+PARSEC is a desktop wallet that treats your keys as yours alone. It is **Algorand first**, with
 Solana, Arweave, EVM / Base and Bitcoin beside it, and it is built so the part that can spend your
 money is small and inspectable: **Rust signs and validates; the interface only asks**. It opens on a
 live market, creates a wallet in three plain steps, registers `.algo` names, publishes to the
@@ -45,19 +45,19 @@ permaweb, and pays for paid APIs over **x402** — the HTTP status code that fin
 |---|---|
 | **Create a wallet you understand** | Your address first. Then the private key and the recovery phrase, each hidden until you reveal it and each one copyable. Then verify and save into the encrypted vault. Algorand's own 25-word phrase; 24-word BIP-39 for Solana and Arweave (the Arweave key also downloads as its JWK). |
 | **Hold many chains under one identity** | Algorand is required and comes first; Solana, Arweave, EVM / Base and Bitcoin (desktop) are added beside it. Every address is shown in its chain's own format, on one line. |
-| **Register a `.algo` name** | Search, see the price, pay, own it. The review screen separates what registration *requires* — the NFD registry price and network fee, in ALGO — from the **BANKON fee** Parsec charges, in USDC over x402. Two currencies, two parties, never added together. |
+| **Register a `.algo` name** | Search, see the price, pay, own it. The review screen separates what registration *requires* — the NFD registry price and network fee, in ALGO — from the **BANKON fee** PARSEC charges, in USDC over x402. Two currencies, two parties, never added together. |
 | **Pay per request with x402** | Probe any URL, see what it costs on which network, choose the rail, approve. The receipt keeps the settled transaction id. |
 | **Read the market at a glance** | The landing ranks the top coins into a pyramid by the period you choose (1h, 4h, 24h, 7d, 30d) — gainers right, losses left, largest moves nearest the apex — with stablecoin pegs and supply flow beside it. |
 | **Publish permanently** | Upload to Arweave through Turbo, manage ArNS names, and bridge or stake on ar.io from the Permaweb section. |
-| **Connect dApps without a browser extension** | Parsec Connect: a local WebSocket bridge (`127.0.0.1:9876`); every signature is approved on screen. |
+| **Connect dApps without a browser extension** | PARSEC Connect: a local WebSocket bridge (`127.0.0.1:9876`); every signature is approved on screen. |
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/create-wallet.png" width="720" alt="Creating an Algorand wallet in Parsec: the address first, then the private key and recovery phrase, each hidden until revealed">
+  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/create-wallet.png" width="720" alt="Creating an Algorand wallet in PARSEC: the address first, then the private key and recovery phrase, each hidden until revealed">
 </p>
 
 ## Wallets for agents, and for agency
 
-Parsec makes wallets for agents as readily as for people, and keeps a person in the loop where it matters.
+PARSEC makes wallets for agents as readily as for people, and keeps a person in the loop where it matters.
 
 | | |
 |---|---|
@@ -65,7 +65,7 @@ Parsec makes wallets for agents as readily as for people, and keeps a person in 
 | **A family from one seed** | Algorand HD (ARC-52) derives an account per agent or per task from a single seed — one backup, many addresses. |
 | **Spending with limits** | Payments under a cap you set go through unattended; anything larger waits for you. Zero means always ask. |
 | **Headless when it should be** | The x402 payer runs outside a browser with any signer, so a script or a service can pay its own way. |
-| **Agency with consent** | Through Parsec Connect an agent asks for a signature or a name action, and you approve or refuse it on screen. The key never leaves Parsec. |
+| **Agency with consent** | Through PARSEC Connect an agent asks for a signature or a name action, and you approve or refuse it on screen. The key never leaves PARSEC. |
 | **Earn as well as spend** | The same rail sells: an agent's own service can answer 402 and settle into its own address. |
 
 ## How it is built
@@ -93,7 +93,7 @@ verifies and settles it on chain. No account, no API key, no subscription — **
 authentication**. That is what makes it a rail for agents: one with a key can buy something it has
 never seen, from a seller it will never meet again.
 
-**How Parsec does it.**
+**How PARSEC does it.**
 
 - **Three rails, one client.** Algorand (USDC, ASA `31566704` on mainnet), EVM (EIP-3009
   transfer-with-authorization, with the EIP-712 digest built in Rust) and Solana (a partially signed
@@ -131,7 +131,7 @@ Bazaar catalogue, and prices every route from one hot-reloaded file:
 async def register_algo_name(order: NameOrder): ...
 ```
 
-**In Parsec.** The x402 desk probes and pays any resource (GET or POST with a JSON body) with an explicit
+**In PARSEC.** The x402 desk probes and pays any resource (GET or POST with a JSON body) with an explicit
 *Pay on* rail picker; `.algo Names` pays its BANKON fee this way.
 [Protocol and design](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/x402-integration.md) ·
 [every export and error](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/x402-api.md) ·
@@ -139,13 +139,13 @@ async def register_algo_name(order: NameOrder): ...
 
 ## Where it stands
 
-Parsec is **alpha**, and says so. What is open is listed, not hidden:
+PARSEC is **alpha**, and says so. What is open is listed, not hidden:
 
-- The first mainnet x402 settlement through Parsec is the next step; until then everything is verified
+- The first mainnet x402 settlement through PARSEC is the next step; until then everything is verified
   against stubs, test shapes and live read endpoints, which is not the same as having settled.
 - The second-generation vault format (wrapped keys, per-entry derivation, Rust-enforced auto-lock) is
   written and specified but not yet compiled in; today's auto-lock is a five-minute interface timer.
-- Parsec's destination is the [cypherpunk4096](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/cypherpunk4096.md)
+- PARSEC's destination is the [cypherpunk4096](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/cypherpunk4096.md)
   standard, which is binary: all of it or none. Two commitments are not met yet — zero runtime
   dependencies, and no floating point in any value path.
 
@@ -164,15 +164,15 @@ Parsec is **alpha**, and says so. What is open is listed, not hidden:
 
 The rest of this organization is a working library: forks of wallets, chain clients and protocol
 tooling (Bitcoin, Litecoin, Safe, Pera, MetaMask, Avalanche, D'CENT, the xchain-accounts and lightspeed
-experiments and more), kept so that Parsec's design can be argued from real code rather than from
-memory. Nothing in the library is Parsec, and Parsec vendors none of it. A structured guide to the
+experiments and more), kept so that PARSEC's design can be argued from real code rather than from
+memory. Nothing in the library is PARSEC, and PARSEC vendors none of it. A structured guide to the
 whole library, written for AI systems, is in [`corpus.prompt.md`](https://github.com/parsec-wallet/.github/blob/main/corpus.prompt.md).
 
 </details>
 
 ## For machines
 
-Language models and agents: start at [`llms.txt`](https://github.com/parsec-wallet/.github/blob/main/llms.txt) — what Parsec is, where every
+Language models and agents: start at [`llms.txt`](https://github.com/parsec-wallet/.github/blob/main/llms.txt) — what PARSEC is, where every
 document lives, and how to pay its endpoints.
 
 ## Get in touch
@@ -180,6 +180,6 @@ document lives, and how to pay its endpoints.
 [sales@pythai.net](mailto:sales@pythai.net) · [bankon.pythai.net](https://bankon.pythai.net) ·
 security reports: see [SECURITY.md](https://github.com/parsec-wallet/PARSEC/blob/dev/SECURITY.md)
 
-<sub>Parsec is built by BANKON. Licensed by component: GPL-3.0-or-later for everything that holds or uses
+<sub>PARSEC is built by BANKON. Licensed by component: GPL-3.0-or-later for everything that holds or uses
 a key, Apache-2.0 for the rest, MIT for the server-side AO processes — per path in
 <a href="https://github.com/parsec-wallet/PARSEC/blob/dev/REUSE.toml">REUSE.toml</a>.</sub>

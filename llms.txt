@@ -1,6 +1,6 @@
 # PARSEC
 
-> Parsec is a sovereign, multi-chain desktop wallet by BANKON: Algorand first, with Solana, Arweave, EVM/Base and Bitcoin. Rust signs and validates; a framework-free TypeScript interface only asks. It creates wallets in three steps (address, back up key and phrase, verify and save), registers .algo names, publishes to the permaweb, and pays for HTTP resources over x402 (HTTP 402 Payment Required). Status: alpha. Source: https://github.com/parsec-wallet/PARSEC (default branch `dev`).
+> PARSEC is a sovereign, multi-chain desktop wallet by BANKON: Algorand first, with Solana, Arweave, EVM/Base and Bitcoin. Rust signs and validates; a framework-free TypeScript interface only asks. It creates wallets in three steps (address, back up key and phrase, verify and save), registers .algo names, publishes to the permaweb, and pays for HTTP resources over x402 (HTTP 402 Payment Required). Status: alpha. Source: https://github.com/parsec-wallet/PARSEC (default branch `dev`).
 
 Facts an agent can rely on:
 
@@ -9,19 +9,19 @@ Facts an agent can rely on:
 - Signing: every chain pack signs in Rust (`src-tauri/src/chain_*`); a signing command returns a signature, never a key. Keys rest encrypted in the vault (`bankon_vault`, Argon2id + AES-256-GCM).
 - Algorand uses its own 25-word mnemonic, never collapsed into BIP-39. Solana and Arweave use 24-word BIP-39; Solana derivation is m/44'/501'/0'/0' (Phantom-compatible).
 - x402 rails: Algorand (USDC ASA 31566704 mainnet, 10458941 testnet; facilitator-sponsored atomic group, so the payer needs no ALGO for fees), EVM (EIP-3009 transferWithAuthorization), Solana (partially signed transaction). Facilitator: https://facilitator.goplausible.xyz. Protocol v2 headers PAYMENT-REQUIRED / PAYMENT-SIGNATURE / PAYMENT-RESPONSE; v1 X-PAYMENT is read.
-- .algo names: registering through Parsec is two payments to two parties, shown separately and never summed: the NFD registry price and network fee in ALGO (necessary), and the BANKON fee in USDC over x402 to https://mindx.pythai.net/names/algo.
+- .algo names: registering through PARSEC is two payments to two parties, shown separately and never summed: the NFD registry price and network fee in ALGO (necessary), and the BANKON fee in USDC over x402 to https://mindx.pythai.net/names/algo.
 - Licence by component: GPL-3.0-or-later for code that generates, derives, holds or uses keys; Apache-2.0 for the rest; MIT for server-side AO processes. Per path: REUSE.toml.
-- Not yet true, and stated as such: the second-generation vault (wrapped DEK, per-entry HKDF, Rust-enforced auto-lock) is specified but not compiled in; the cypherpunk4096 standard is the goal and is not met (runtime dependencies; floating point in value paths); the first mainnet x402 settlement through Parsec is pending.
+- Not yet true, and stated as such: the second-generation vault (wrapped DEK, per-entry HKDF, Rust-enforced auto-lock) is specified but not compiled in; the cypherpunk4096 standard is the goal and is not met (runtime dependencies; floating point in value paths); the first mainnet x402 settlement through PARSEC is pending.
 
 ## Wallets for agents and agency
 
-Parsec is a place to make and run wallets for agents, not only for people. What it offers an agent, or a person acting through one:
+PARSEC is a place to make and run wallets for agents, not only for people. What it offers an agent, or a person acting through one:
 
 - Many wallets, one vault: any number of accounts across Algorand, Solana, Arweave, EVM/Base and Bitcoin, each with its own keys, kept encrypted in one vault. Watch-only accounts let an agent read a balance it cannot spend.
 - Many accounts from one seed: Algorand HD (ARC-52) derives a family of accounts from a single seed, so each agent or task can have its own address without a new phrase to back up.
 - Spending with limits: the x402 client auto-approves only payments under a cap you set (`autoApproveMicroUsd`; 0 = always ask). An agent can pay small amounts unattended while anything larger waits for a human.
 - Headless payment: the x402 payer runs outside a browser with in-memory storage and any signer — an `algosdk.TransactionSigner`, a local account for a script, or a wallet's signer. See the usage recipes, "Run it outside a browser".
-- Agency with consent: through Parsec Connect (ws://127.0.0.1:9876) an agent or dApp asks for a signature or a name action, and the person approves or rejects each request on screen. The key never leaves Parsec.
+- Agency with consent: through PARSEC Connect (ws://127.0.0.1:9876) an agent or dApp asks for a signature or a name action, and the person approves or rejects each request on screen. The key never leaves PARSEC.
 - Paying and being paid: the same rail sells. The x402 seller middleware lets an agent's own service answer 402 and settle into its payTo, so an agent can earn as well as spend.
 
 ## Start here
@@ -39,7 +39,7 @@ Parsec is a place to make and run wallets for agents, not only for people. What 
 - [Protocol integration](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/x402-integration.md): headers, the Algorand atomic group, EVM and Solana rails, discovery
 - [API reference](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/x402-api.md): every export and every error
 
-How to pay a Parsec-sold endpoint as an agent: send the request; on 402, read the base64 JSON `PAYMENT-REQUIRED` header; choose the `accepts` entry for your network (Algorand mainnet: `algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=`, asset `31566704`); build the group with `extra.feePayer` as the fee payer and your USDC transfer to `payTo` for `amount`; sign your transaction only; resend the same request with `PAYMENT-SIGNATURE`. The response carries `PAYMENT-RESPONSE` with the settled transaction id. Example, in TypeScript:
+How to pay a PARSEC-sold endpoint as an agent: send the request; on 402, read the base64 JSON `PAYMENT-REQUIRED` header; choose the `accepts` entry for your network (Algorand mainnet: `algorand:wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=`, asset `31566704`); build the group with `extra.feePayer` as the fee payer and your USDC transfer to `payTo` for `amount`; sign your transaction only; resend the same request with `PAYMENT-SIGNATURE`. The response carries `PAYMENT-RESPONSE` with the settled transaction id. Example, in TypeScript:
 
 ```ts
 import { createX402Client, algorandSigner } from './x402';
@@ -57,15 +57,15 @@ const res = await x402.fetch(url, { method: 'POST', headers: { 'Content-Type': '
 
 ## Names, permaweb, connect
 
-- [BANKON Names](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/bankon-names.md): the name registries Parsec reads and writes (ArNS, BANKON Names, Solana-ArNS)
+- [BANKON Names](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/bankon-names.md): the name registries PARSEC reads and writes (ArNS, BANKON Names, Solana-ArNS)
 - [Permaweb module](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/permaweb/README.md): Arweave uploads through Turbo, ArNS, ar.io gateways
 - [Marketspace](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/marketspace.md): listings and auctions as an AO process
-- [Parsec Connect](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/parsec-connect.md): the dApp bridge on ws://127.0.0.1:9876; every signature is approved on screen
+- [PARSEC Connect](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/parsec-connect.md): the dApp bridge on ws://127.0.0.1:9876; every signature is approved on screen
 - [Chain packs](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/chains/README.md): how a chain is added
 
 ## Optional
 
-- [Organization corpus guide](https://github.com/parsec-wallet/.github/blob/main/corpus.prompt.md): a structured guide to the forked wallets and protocol stacks kept in this organization as a reference library; none of it is Parsec and Parsec vendors none of it
+- [Organization corpus guide](https://github.com/parsec-wallet/.github/blob/main/corpus.prompt.md): a structured guide to the forked wallets and protocol stacks kept in this organization as a reference library; none of it is PARSEC and PARSEC vendors none of it
 - [Development plan](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/DEVELOPMENT_PLAN.md): roadmap and phase ladder (last revised 2026-05-16)
 - [Lightspeed](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/lightspeed.md): reactive chain reads
 - Contact: sales@pythai.net · https://bankon.pythai.net

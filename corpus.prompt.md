@@ -20,7 +20,7 @@ Taken together, this org can be read as a **research corpus for sovereign wallet
 - **Reference standards and research material** such as EIPs, Ethereum educational resources, zkSNARK examples, and ETC ecosystem references
 - **Prototype and sovereign experiments** that touch proxy wallets, cross-chain routers, QR-based signature minting, oracle-aware consumer contracts, and more
 
-This makes the org valuable not only as a code source, but as an **AI-ingestible design map** for constructing Parsec as a modular, chain-aware, security-first wallet platform.
+This makes the org valuable not only as a code source, but as an **AI-ingestible design map** for constructing PARSEC as a modular, chain-aware, security-first wallet platform.
 
 ---
 
@@ -29,7 +29,7 @@ This makes the org valuable not only as a code source, but as an **AI-ingestible
 Copy the following prompt into Claude exactly as-is, then attach or paste repository material as needed.
 
 ```md
-You are ingesting the entire `parsec-wallet` GitHub organization as a design and implementation corpus for a sovereign universal wallet platform named **Parsec**.
+You are ingesting the entire `parsec-wallet` GitHub organization as a design and implementation corpus for a sovereign universal wallet platform named **PARSEC**.
 
 Your goals:
 
@@ -41,14 +41,14 @@ Your goals:
    - token / NFT / onboarding utility
    - distributed web / storage / privacy
    - standards / research / examples
-   - Parsec-native or sovereign experiment
+   - PARSEC-native or sovereign experiment
 3. For each repository:
    - summarize what it contributes
-   - identify what is reusable for Parsec
+   - identify what is reusable for PARSEC
    - identify risks or mismatches for a no-external-dependency TSX/CSS + Tauri + Tomb architecture
    - note likely upstream ecosystem alignment (Bitcoin, EVM, Cosmos, Avalanche, Arweave, IOTA, etc.)
 4. Produce:
-   - a dependency-free architectural recommendation for Parsec
+   - a dependency-free architectural recommendation for PARSEC
    - a prioritized ingestion order
    - a “borrow / reimplement / ignore” decision for every repository
    - a cross-reference map showing which repos inform:
@@ -69,7 +69,7 @@ Output style:
 - crisp sections
 - no fluff
 - decisive recommendations
-- explicit reuse strategy for Parsec
+- explicit reuse strategy for PARSEC
 ```
 
 ---
@@ -132,7 +132,7 @@ Useful for wallet growth loops, user prompts, vault access, and token discovery.
 9. `eth-gas-price-suggestor`
 
 ### Tier 5 — Distributed Web / Sovereign Data / Privacy
-These are strategic repos if Parsec expands into sovereign sync, offline-first state, or distributed content distribution.
+These are strategic repos if PARSEC expands into sovereign sync, offline-first state, or distributed content distribution.
 
 1. `hypercore`
 2. `hyperdrive-next`
@@ -161,8 +161,8 @@ Below is the full quick-reference inventory for **every repository** visible in 
 
 ### `parsec-pod`
 - **URL:** https://github.com/parsec-wallet/parsec-pod
-- **Quick summary:** Smart wallet in Node.js; likely the most directly Parsec-aligned product artifact in the org.
-- **Why it matters:** Strong candidate for understanding prior Parsec naming, wallet data models, and orchestration patterns.
+- **Quick summary:** Smart wallet in Node.js; likely the most directly PARSEC-aligned product artifact in the org.
+- **Why it matters:** Strong candidate for understanding prior PARSEC naming, wallet data models, and orchestration patterns.
 
 ### `wallet`
 - **URL:** https://github.com/parsec-wallet/wallet
@@ -202,7 +202,7 @@ Below is the full quick-reference inventory for **every repository** visible in 
 ### `wallet.rs`
 - **URL:** https://github.com/parsec-wallet/wallet.rs
 - **Quick summary:** Rust wallet toolkit for applications involving IOTA value transfer.
-- **Why it matters:** Highly relevant to Rust-side wallet logic, especially if Parsec centralizes signing and account handling in Tauri/Rust.
+- **Why it matters:** Highly relevant to Rust-side wallet logic, especially if PARSEC centralizes signing and account handling in Tauri/Rust.
 
 ### `emeris-extension`
 - **URL:** https://github.com/parsec-wallet/emeris-extension
@@ -236,7 +236,7 @@ Below is the full quick-reference inventory for **every repository** visible in 
 ### `chainlist`
 - **URL:** https://github.com/parsec-wallet/chainlist
 - **Quick summary:** Registry of blockchains and testnets by RPC, with add-to-wallet support.
-- **Why it matters:** Excellent reference for Parsec network registry design and user-facing network onboarding.
+- **Why it matters:** Excellent reference for PARSEC network registry design and user-facing network onboarding.
 
 ### `ankr.js`
 - **URL:** https://github.com/parsec-wallet/ankr.js
@@ -256,7 +256,7 @@ Below is the full quick-reference inventory for **every repository** visible in 
 ### `xchainjs-lib-1`
 - **URL:** https://github.com/parsec-wallet/xchainjs-lib-1
 - **Quick summary:** Lightweight TypeScript library for cross-chain wallets via a common interface.
-- **Why it matters:** Particularly relevant as an architecture reference for Parsec’s chain-pack / adapter strategy.
+- **Why it matters:** Particularly relevant as an architecture reference for PARSEC’s chain-pack / adapter strategy.
 
 ### `contracts`
 - **URL:** https://github.com/parsec-wallet/contracts
@@ -344,7 +344,7 @@ Below is the full quick-reference inventory for **every repository** visible in 
 ### `bitauth`
 - **URL:** https://github.com/parsec-wallet/bitauth
 - **Quick summary:** Authentication with web services using Bitcoin-style cryptographic strategy.
-- **Why it matters:** Useful for Parsec-native authentication flows grounded in wallet signatures rather than passwords.
+- **Why it matters:** Useful for PARSEC-native authentication flows grounded in wallet signatures rather than passwords.
 
 ### `bitpay-checkout-for-woocommerce`
 - **URL:** https://github.com/parsec-wallet/bitpay-checkout-for-woocommerce
@@ -383,7 +383,7 @@ Below is the full quick-reference inventory for **every repository** visible in 
 ### `hypercore`
 - **URL:** https://github.com/parsec-wallet/hypercore
 - **Quick summary:** Secure, distributed append-only log.
-- **Why it matters:** Useful if Parsec later needs replicated event logs, wallet journaling, or offline-synchronizable state.
+- **Why it matters:** Useful if PARSEC later needs replicated event logs, wallet journaling, or offline-synchronizable state.
 
 ### `earthstar`
 - **URL:** https://github.com/parsec-wallet/earthstar
@@ -417,7 +417,7 @@ Below is the full quick-reference inventory for **every repository** visible in 
 ### `zksnarks_example`
 - **URL:** https://github.com/parsec-wallet/zksnarks_example
 - **Quick summary:** zkSNARK tutorial repository.
-- **Why it matters:** Research-oriented reference if Parsec later incorporates privacy proofs, verifiable attestations, or succinct-auth patterns.
+- **Why it matters:** Research-oriented reference if PARSEC later incorporates privacy proofs, verifiable attestations, or succinct-auth patterns.
 
 ### `lightspeed`
 - **URL:** https://github.com/parsec-wallet/lightspeed
@@ -426,7 +426,7 @@ Below is the full quick-reference inventory for **every repository** visible in 
 
 ---
 
-## 5. Practical Reuse Guidance for Parsec
+## 5. Practical Reuse Guidance for PARSEC
 
 ### Borrow directly at the idea/interface level
 - `chainlist`
@@ -440,8 +440,8 @@ Below is the full quick-reference inventory for **every repository** visible in 
 - `bitcore-p2p`
 - `EIPs`
 
-### Reimplement in-house for Parsec’s architecture
-Because Parsec is targeting **Tauri + Rust backend + zero-dependency TSX/CSS frontend + Tomb-backed local vault**, the right move is usually to **reimplement the good ideas**, not pull large runtime-heavy codebases directly.
+### Reimplement in-house for PARSEC’s architecture
+Because PARSEC is targeting **Tauri + Rust backend + zero-dependency TSX/CSS frontend + Tomb-backed local vault**, the right move is usually to **reimplement the good ideas**, not pull large runtime-heavy codebases directly.
 
 Especially true for:
 - `metamask-extension`
@@ -476,13 +476,13 @@ Claude should recognize that this organization is not just “a bunch of crypto 
 - wallet UX growth loops
 - standards and deep protocol references
 
-That combination makes it unusually useful for designing **Parsec as a universal sovereign wallet**.
+That combination makes it unusually useful for designing **PARSEC as a universal sovereign wallet**.
 
 ---
 
 ## 7. Closing Directive
 
-If this corpus is used to inform Parsec:
+If this corpus is used to inform PARSEC:
 
 - prefer **small, explicit interfaces**
 - keep **signing in Rust**
@@ -493,4 +493,4 @@ If this corpus is used to inform Parsec:
 
 The right outcome is not to imitate any single upstream wallet.
 
-The right outcome is to synthesize a **cleaner, safer, more sovereign Parsec**.
+The right outcome is to synthesize a **cleaner, safer, more sovereign PARSEC**.
