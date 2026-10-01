@@ -1,496 +1,185 @@
-# PARSEC Wallet GitHub Organization — README.prompt
+<p align="center">
+  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/parsec-mark.png" width="96" height="96" alt="The Parsec mark: a gold delta inside an orbital ring">
+</p>
 
-> **Purpose**
->
-> This document is a polished, machine-ready ingestion prompt and quick-reference catalog for the GitHub organization at `parsec-wallet`.
-> It is designed to help an AI system rapidly understand the repository landscape, identify architectural themes, and extract reusable patterns for a sovereign, universal wallet platform.
+<h1 align="center">PARSEC</h1>
+
+<p align="center">
+  <b>A sovereign wallet for a multi-chain, agent-paying internet.</b><br>
+  Your keys stay on your machine. Your wallet pays for what it uses. Every claim here links to the code that makes it true.
+</p>
+
+<p align="center">
+  <a href="https://github.com/parsec-wallet/PARSEC"><img alt="PARSEC on GitHub" src="https://img.shields.io/badge/PARSEC-the%20wallet-f2c14b?style=flat-square&labelColor=0b0f16"></a>
+  <a href="https://github.com/parsec-wallet/x402"><img alt="x402 module" src="https://img.shields.io/badge/x402-pay%20per%20request-4fa8e8?style=flat-square&labelColor=0b0f16"></a>
+  <a href="https://github.com/parsec-wallet/PARSEC/blob/dev/LICENSE"><img alt="Licence: GPL-3.0 / Apache-2.0 / MIT by component" src="https://img.shields.io/badge/licence-GPL--3.0%20%C2%B7%20Apache--2.0%20%C2%B7%20MIT-555?style=flat-square&labelColor=0b0f16"></a>
+</p>
+
+<p align="center">
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-66%25-3178c6?style=flat-square&logo=typescript&logoColor=white&labelColor=0b0f16">
+  <img alt="Rust" src="https://img.shields.io/badge/Rust-15%25-dea584?style=flat-square&logo=rust&logoColor=white&labelColor=0b0f16">
+  <img alt="SCSS" src="https://img.shields.io/badge/SCSS-14%25-c6538c?style=flat-square&logo=sass&logoColor=white&labelColor=0b0f16">
+  <img alt="Lua" src="https://img.shields.io/badge/Lua%20(AO)-2%25-2c2d72?style=flat-square&logo=lua&logoColor=white&labelColor=0b0f16">
+  <img alt="Tauri 2" src="https://img.shields.io/badge/Tauri-2-24c8db?style=flat-square&logo=tauri&logoColor=white&labelColor=0b0f16">
+  <img alt="Algorand first" src="https://img.shields.io/badge/Algorand-first-ffffff?style=flat-square&logo=algorand&logoColor=white&labelColor=0b0f16">
+</p>
 
 ---
 
-## 1. Executive Framing
+<p align="center">
+  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/landing.png" width="860" alt="The Parsec landing: a live market pyramid ranked by the selected period, floating price glyphs, and the overlay toggles">
+</p>
 
-The `parsec-wallet` organization reads like a **wallet systems laboratory**: a deliberately broad collection of repositories spanning wallet frontends, chain infrastructure, signing stacks, hardware wallet integrations, distributed-web tooling, token-onboarding utilities, standards references, and experimental protocol work.
+## Parsec, in a paragraph
 
-Taken together, this org can be read as a **research corpus for sovereign wallet design**:
+Parsec is a desktop wallet that treats your keys as yours alone. It is **Algorand first**, with
+Solana, Arweave, EVM / Base and Bitcoin beside it, and it is built so the part that can spend your
+money is small and inspectable: **Rust signs and validates; the interface only asks**. It opens on a
+live market, creates a wallet in three plain steps, registers `.algo` names, publishes to the
+permaweb, and pays for paid APIs over **x402** — the HTTP status code that finally means something:
+*402 Payment Required*.
 
-- **Wallet UX surfaces** across Bitcoin, EVM, Cosmos, Avalanche, Arweave, IOTA, and Safe-style multisig
-- **Protocol adapters and infrastructure** for Bitcoin, EVM, RPC registries, gas, signing, and cross-chain abstractions
-- **Hardware and provider bridges** for D'CENT and EIP-1193-compatible discovery
-- **Distributed web and privacy systems** built around Hypercore, Hyperdrive, Earthstar, and Agregore
-- **Reference standards and research material** such as EIPs, Ethereum educational resources, zkSNARK examples, and ETC ecosystem references
-- **Prototype and sovereign experiments** that touch proxy wallets, cross-chain routers, QR-based signature minting, oracle-aware consumer contracts, and more
+## What you can do with it today
 
-This makes the org valuable not only as a code source, but as an **AI-ingestible design map** for constructing Parsec as a modular, chain-aware, security-first wallet platform.
+| | |
+|---|---|
+| **Create a wallet you understand** | Your address first. Then the private key and the recovery phrase, each hidden until you reveal it and each one copyable. Then verify and save into the encrypted vault. Algorand's own 25-word phrase; 24-word BIP-39 for Solana and Arweave (the Arweave key also downloads as its JWK). |
+| **Hold many chains under one identity** | Algorand is required and comes first; Solana, Arweave, EVM / Base and Bitcoin (desktop) are added beside it. Every address is shown in its chain's own format, on one line. |
+| **Register a `.algo` name** | Search, see the price, pay, own it. The review screen separates what registration *requires* — the NFD registry price and network fee, in ALGO — from the **BANKON fee** Parsec charges, in USDC over x402. Two currencies, two parties, never added together. |
+| **Pay per request with x402** | Probe any URL, see what it costs on which network, choose the rail, approve. The receipt keeps the settled transaction id. |
+| **Read the market at a glance** | The landing ranks the top coins into a pyramid by the period you choose (1h, 4h, 24h, 7d, 30d) — gainers right, losses left, largest moves nearest the apex — with stablecoin pegs and supply flow beside it. |
+| **Publish permanently** | Upload to Arweave through Turbo, manage ArNS names, and bridge or stake on ar.io from the Permaweb section. |
+| **Connect dApps without a browser extension** | Parsec Connect: a local WebSocket bridge (`127.0.0.1:9876`); every signature is approved on screen. |
 
----
+<p align="center">
+  <img src="https://raw.githubusercontent.com/parsec-wallet/.github/main/profile/img/create-wallet.png" width="720" alt="Creating an Algorand wallet in Parsec: the address first, then the private key and recovery phrase, each hidden until revealed">
+</p>
 
-## 2. claude.prompt
+## Wallets for agents, and for agency
 
-Copy the following prompt into Claude exactly as-is, then attach or paste repository material as needed.
+Parsec makes wallets for agents as readily as for people, and keeps a person in the loop where it matters.
 
-```md
-You are ingesting the entire `parsec-wallet` GitHub organization as a design and implementation corpus for a sovereign universal wallet platform named **Parsec**.
+| | |
+|---|---|
+| **One vault, many wallets** | Any number of accounts across five chains, each with its own keys, encrypted together. Watch-only accounts let an agent read what it cannot spend. |
+| **A family from one seed** | Algorand HD (ARC-52) derives an account per agent or per task from a single seed — one backup, many addresses. |
+| **Spending with limits** | Payments under a cap you set go through unattended; anything larger waits for you. Zero means always ask. |
+| **Headless when it should be** | The x402 payer runs outside a browser with any signer, so a script or a service can pay its own way. |
+| **Agency with consent** | Through Parsec Connect an agent asks for a signature or a name action, and you approve or refuse it on screen. The key never leaves Parsec. |
+| **Earn as well as spend** | The same rail sells: an agent's own service can answer 402 and settle into its own address. |
 
-Your goals:
+## How it is built
 
-1. Build a mental model of the organization as a wallet R&D ecosystem rather than a random repo list.
-2. Classify each repository by function:
-   - wallet frontend
-   - chain client / protocol stack
-   - provider / signer / hardware integration
-   - token / NFT / onboarding utility
-   - distributed web / storage / privacy
-   - standards / research / examples
-   - Parsec-native or sovereign experiment
-3. For each repository:
-   - summarize what it contributes
-   - identify what is reusable for Parsec
-   - identify risks or mismatches for a no-external-dependency TSX/CSS + Tauri + Tomb architecture
-   - note likely upstream ecosystem alignment (Bitcoin, EVM, Cosmos, Avalanche, Arweave, IOTA, etc.)
-4. Produce:
-   - a dependency-free architectural recommendation for Parsec
-   - a prioritized ingestion order
-   - a “borrow / reimplement / ignore” decision for every repository
-   - a cross-reference map showing which repos inform:
-     - wallet import and account handling
-     - address and key recognition
-     - chain adapters
-     - transaction signing
-     - multisig / smart accounts
-     - RPC and network registry handling
-     - DEX and token onboarding UX
-     - distributed storage / sovereign sync
-     - browser / extension / dApp provider support
-5. Prefer extracting ideas, interfaces, flows, and security lessons over copying code blindly.
-6. Treat licensing, architecture style, runtime weight, and security posture as first-class considerations.
+Shiny on the outside; on the inside, an engineered movement you can open and read.
 
-Output style:
-- elegant technical markdown
-- crisp sections
-- no fluff
-- decisive recommendations
-- explicit reuse strategy for Parsec
+- **Rust decides, TypeScript suggests.** Signing for every chain pack and address validation run in
+  Rust, and keys rest encrypted in the Rust vault. A signing command returns a signature, never a key.
+- **No UI framework.** Vanilla TypeScript and one small DOM kit; no React, no wallet-connection SDKs,
+  no chart libraries. The same build ships as the desktop app and as a permaweb site.
+- **An encrypted vault you can read the specification of.** Argon2id key derivation and AES-256-GCM,
+  with an optional LUKS cold volume ("the Tomb"). [Vault specification](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/security/bankon-vault-spec.md) ·
+  [threat model](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/security/threat-model.md)
+- **Modular by contract.** A new chain or tool is one module registration and one document.
+  [The module contract](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/modules.md)
+- **Designed for what comes after elliptic curves.** Algorand is first because its accounts can move to
+  Falcon-1024 keys while keeping the same address. [QUANTUM.md](https://github.com/parsec-wallet/PARSEC/blob/dev/QUANTUM.md)
+
+## x402: paying for the web, one request at a time
+
+**What it is.** A server answers a request with `402 Payment Required` and a `PAYMENT-REQUIRED`
+header describing exactly what it will accept: the price, the asset, the address to pay, the network.
+The client builds and signs a payment, sends the same request again carrying it, and a *facilitator*
+verifies and settles it on chain. No account, no API key, no subscription — **the payment is the
+authentication**. That is what makes it a rail for agents: one with a key can buy something it has
+never seen, from a seller it will never meet again.
+
+**How Parsec does it.**
+
+- **Three rails, one client.** Algorand (USDC, ASA `31566704` on mainnet), EVM (EIP-3009
+  transfer-with-authorization, with the EIP-712 digest built in Rust) and Solana (a partially signed
+  transaction). A new chain is one `registerRail()`.
+- **Gasless on Algorand.** The payment is an atomic group: the payer's USDC transfer, plus a
+  fee-payer transaction the facilitator signs. The payer needs USDC, not ALGO for fees.
+- **Built not to pay twice.** Every wait is bounded; a payment sent to a server that then goes silent
+  reports *indeterminate*, not *failed* — reporting failed is how a payer pays twice. The amount is
+  validated before it becomes a number, and every receipt keeps the settled transaction id.
+- **Portable.** The module talks to its host through three small ports — signing, storage, network —
+  so any Algorand wallet can embed it: an `algosdk.TransactionSigner` is the signer, unchanged.
+  Discovery reads the facilitator's Bazaar catalogue.
+
+**Use it in your own wallet or agent** ([github.com/parsec-wallet/x402](https://github.com/parsec-wallet/x402)):
+
+```ts
+import { createX402Client, algorandSigner } from './x402';
+
+const x402 = createX402Client({
+  signers: { avm: algorandSigner(address, transactionSigner) },   // use-wallet, AlgoKit, Pera, Defly
+  approve: async (p) => confirm(`Pay ${p.quote.amountDisplay} ${p.quote.assetSymbol}?`),
+});
+
+const res = await x402.fetch('https://api.example.com/weather');   // pays the 402, retries, returns the 200
 ```
 
----
-
-## 3. Recommended Ingestion Order
-
-### Tier 1 — Wallet Architecture and Core UX
-Start here to understand mainstream wallet surface area and account-management expectations.
-
-1. `parsec-pod`
-2. `wallet`
-3. `safe-wallet-web`
-4. `web-core-safe-webui`
-5. `metamask-extension`
-6. `keplr-wallet`
-7. `avalanche-wallet`
-8. `ArweaveWebWallet`
-9. `wallet.rs`
-10. `emeris-extension`
-
-### Tier 2 — Chain Infrastructure and Protocol Mechanics
-These repos inform signing, networking, gas, chain metadata, multi-chain abstraction, and smart account flows.
-
-1. `bitcoin`
-2. `litecoin`
-3. `bitcore`
-4. `bitcore-p2p`
-5. `chainlist`
-6. `ankr.js`
-7. `signatory`
-8. `gsn`
-9. `xchainjs-lib-1`
-10. `contracts`
-11. `DELTAVstargaterouter.sol`
-12. `EIPs`
-13. `sputnikvm`
-14. `sputnikvm-in-browser`
-
-### Tier 3 — Provider / Hardware / Browser Interop
-These help with signer discovery, hardware connectors, and wallet-provider patterns.
-
-1. `detect-provider`
-2. `dai-plugin-dcent-web`
-3. `dcent-provider`
-4. `eth-dcent-keyring`
-5. `web3-react-dcent-connector`
-6. `forwarder`
-
-### Tier 4 — Token / NFT / Onboarding UX
-Useful for wallet growth loops, user prompts, vault access, and token discovery.
-
-1. `Add-Token`
-2. `watch-token`
-3. `vault-decryptor`
-4. `bitauth`
-5. `bitpay-checkout-for-woocommerce`
-6. `proxy-contract-wallet-example`
-7. `signature-minting-to-qr-code`
-8. `MintLIT`
-9. `eth-gas-price-suggestor`
-
-### Tier 5 — Distributed Web / Sovereign Data / Privacy
-These are strategic repos if Parsec expands into sovereign sync, offline-first state, or distributed content distribution.
-
-1. `hypercore`
-2. `hyperdrive-next`
-3. `earthstar`
-4. `earthstar-fetch`
-5. `agregore-browser`
-6. `slingshot`
-
-### Tier 6 — Research, Study, and Experimental Context
-These sharpen the conceptual layer around Ethereum, ETC, zk systems, and general wallet thinking.
-
-1. `ethereumbook`
-2. `Awesome-ETC`
-3. `zksnarks_example`
-4. `lightspeed`
-
----
-
-## 4. Quick Reference Catalog
-
-Below is the full quick-reference inventory for **every repository** visible in the `parsec-wallet` organization repository listing.
-
----
-
-## 4A. Wallet Frontends, Wallet Products, and User-Facing Interfaces
-
-### `parsec-pod`
-- **URL:** https://github.com/parsec-wallet/parsec-pod
-- **Quick summary:** Smart wallet in Node.js; likely the most directly Parsec-aligned product artifact in the org.
-- **Why it matters:** Strong candidate for understanding prior Parsec naming, wallet data models, and orchestration patterns.
-
-### `wallet`
-- **URL:** https://github.com/parsec-wallet/wallet
-- **Quick summary:** BitPay Wallet / Copay-style multi-currency wallet platform for desktop and mobile.
-- **Why it matters:** Useful reference for mature wallet flows, account management, transaction UX, and cross-platform product structure.
-
-### `safe-wallet-web`
-- **URL:** https://github.com/parsec-wallet/safe-wallet-web
-- **Quick summary:** Default Safe web interface for smart-account and multisig wallet interaction.
-- **Why it matters:** Important reference for contract wallets, multisig flows, policy surfaces, and high-assurance signing UX.
-
-### `web-core-safe-webui`
-- **URL:** https://github.com/parsec-wallet/web-core-safe-webui
-- **Quick summary:** New Safe web interface, closely related to Safe multisig / account-abstraction UX.
-- **Why it matters:** Useful companion to `safe-wallet-web` when studying smart-account interface patterns.
-
-### `metamask-extension`
-- **URL:** https://github.com/parsec-wallet/metamask-extension
-- **Quick summary:** MetaMask browser extension codebase for Ethereum-enabled site interaction.
-- **Why it matters:** Critical reference for provider injection, extension wallet UX, vault patterns, and dApp permission handling.
-
-### `keplr-wallet`
-- **URL:** https://github.com/parsec-wallet/keplr-wallet
-- **Quick summary:** Powerful wallet for the Cosmos ecosystem and the Interchain.
-- **Why it matters:** Strong reference for chain-aware account UX, Bech32 flows, staking-centric design, and Cosmos provider patterns.
-
-### `avalanche-wallet`
-- **URL:** https://github.com/parsec-wallet/avalanche-wallet
-- **Quick summary:** Avalanche web wallet.
-- **Why it matters:** Useful for subnet-aware wallet ideas, chain-specific UX, and non-Ethereum account handling.
-
-### `ArweaveWebWallet`
-- **URL:** https://github.com/parsec-wallet/ArweaveWebWallet
-- **Quick summary:** Source for the arweave.app wallet interface.
-- **Why it matters:** Good reference for wallet flows on a storage-centric network and for alternative key/address models.
-
-### `wallet.rs`
-- **URL:** https://github.com/parsec-wallet/wallet.rs
-- **Quick summary:** Rust wallet toolkit for applications involving IOTA value transfer.
-- **Why it matters:** Highly relevant to Rust-side wallet logic, especially if Parsec centralizes signing and account handling in Tauri/Rust.
-
-### `emeris-extension`
-- **URL:** https://github.com/parsec-wallet/emeris-extension
-- **Quick summary:** Browser extension for digital signature controls in the Emeris ecosystem.
-- **Why it matters:** Useful for extension-based signature mediation and user-consent patterns.
-
----
-
-## 4B. Chain Infrastructure, Protocol Tooling, and Multi-Chain Foundations
-
-### `bitcoin`
-- **URL:** https://github.com/parsec-wallet/bitcoin
-- **Quick summary:** Bitcoin Core integration / staging tree.
-- **Why it matters:** Foundational for UTXO rules, node interaction, transaction policy, and canonical Bitcoin wallet behavior.
-
-### `litecoin`
-- **URL:** https://github.com/parsec-wallet/litecoin
-- **Quick summary:** Litecoin source tree.
-- **Why it matters:** Useful as a second UTXO-family reference and for multi-chain wallet support beyond Bitcoin itself.
-
-### `bitcore`
-- **URL:** https://github.com/parsec-wallet/bitcore
-- **Quick summary:** Full stack for Bitcoin and blockchain-based applications.
-- **Why it matters:** Good reference for Bitcoin service layers, wallet plumbing, transaction building, and supporting services.
-
-### `bitcore-p2p`
-- **URL:** https://github.com/parsec-wallet/bitcore-p2p
-- **Quick summary:** Interface to the Bitcoin P2P network for Bitcore.
-- **Why it matters:** Useful for direct network interaction patterns and node-level wallet intelligence.
-
-### `chainlist`
-- **URL:** https://github.com/parsec-wallet/chainlist
-- **Quick summary:** Registry of blockchains and testnets by RPC, with add-to-wallet support.
-- **Why it matters:** Excellent reference for Parsec network registry design and user-facing network onboarding.
-
-### `ankr.js`
-- **URL:** https://github.com/parsec-wallet/ankr.js
-- **Quick summary:** JavaScript library for interacting with Ankr APIs.
-- **Why it matters:** Useful for RPC aggregation, remote data access patterns, and service-backed chain integration.
-
-### `gsn`
-- **URL:** https://github.com/parsec-wallet/gsn
-- **Quick summary:** Ethereum Gas Station Network v2 implementation.
-- **Why it matters:** Valuable for gas abstraction, meta-transactions, relayers, and fee sponsorship models.
-
-### `signatory`
-- **URL:** https://github.com/parsec-wallet/signatory
-- **Quick summary:** Transaction and message signer for the Ethereum stack.
-- **Why it matters:** Strong reference for signer interfaces, message signing, and transaction authorization boundaries.
-
-### `xchainjs-lib-1`
-- **URL:** https://github.com/parsec-wallet/xchainjs-lib-1
-- **Quick summary:** Lightweight TypeScript library for cross-chain wallets via a common interface.
-- **Why it matters:** Particularly relevant as an architecture reference for Parsec’s chain-pack / adapter strategy.
-
-### `contracts`
-- **URL:** https://github.com/parsec-wallet/contracts
-- **Quick summary:** Consumer contract wallet for oracle-based price interaction.
-- **Why it matters:** Suggests smart-wallet patterns connected to external price data and on-chain logic.
-
-### `DELTAVstargaterouter.sol`
-- **URL:** https://github.com/parsec-wallet/DELTAVstargaterouter.sol
-- **Quick summary:** Omnibridge / symbiosis / rosen-bridge / all-chain routing experiment.
-- **Why it matters:** Useful as a conceptual artifact for multi-chain routing and bridge-aware wallet ambitions.
-
-### `EIPs`
-- **URL:** https://github.com/parsec-wallet/EIPs
-- **Quick summary:** Ethereum Improvement Proposal repository.
-- **Why it matters:** Essential standards corpus for provider rules, account abstraction, signing, RPC, token standards, and wallet compatibility.
-
-### `sputnikvm`
-- **URL:** https://github.com/parsec-wallet/sputnikvm
-- **Quick summary:** Blockchain virtual machine in Rust.
-- **Why it matters:** Relevant for low-level EVM execution understanding and Rust-based chain tooling.
-
-### `sputnikvm-in-browser`
-- **URL:** https://github.com/parsec-wallet/sputnikvm-in-browser
-- **Quick summary:** Browser-targeted WASM build of SputnikVM.
-- **Why it matters:** Useful when exploring lightweight in-browser or portable execution patterns.
-
-### `slingshot`
-- **URL:** https://github.com/parsec-wallet/slingshot
-- **Quick summary:** Blockchain architecture focused on scalability, privacy, and safety.
-- **Why it matters:** More strategic than immediate, but interesting for sovereign network and protocol-design thinking.
-
----
-
-## 4C. Provider Detection, Hardware Wallet Bridges, and Signing Interop
-
-### `dai-plugin-dcent-web`
-- **URL:** https://github.com/parsec-wallet/dai-plugin-dcent-web
-- **Quick summary:** Browser plugin for using D'CENT with `dai.js`.
-- **Why it matters:** Useful for hardware-wallet connectivity patterns and browser-signing bridges.
-
-### `dcent-provider`
-- **URL:** https://github.com/parsec-wallet/dcent-provider
-- **Quick summary:** Ethereum web3 provider for D'CENT Biometric Wallet.
-- **Why it matters:** Important reference for provider wrapping and hardware signer integration.
-
-### `eth-dcent-keyring`
-- **URL:** https://github.com/parsec-wallet/eth-dcent-keyring
-- **Quick summary:** JS wrapper around D'CENT connector libraries for MetaMask-style keyring control.
-- **Why it matters:** Excellent for understanding how hardware wallets can plug into extension wallet keyring systems.
-
-### `web3-react-dcent-connector`
-- **URL:** https://github.com/parsec-wallet/web3-react-dcent-connector
-- **Quick summary:** D'CENT connector for `web3-react`.
-- **Why it matters:** Useful as a thin interoperability reference for connector-style wallet composition.
-
-### `detect-provider`
-- **URL:** https://github.com/parsec-wallet/detect-provider
-- **Quick summary:** Tiny utility for detecting MetaMask or any EIP-1193-compliant provider.
-- **Why it matters:** Very relevant to dApp-connection UX and provider discovery logic.
-
-### `forwarder`
-- **URL:** https://github.com/parsec-wallet/forwarder
-- **Quick summary:** Redirect page for installing MetaMask and returning users to the requesting app.
-- **Why it matters:** Small but instructive for wallet onboarding, install flow continuity, and dApp fallback UX.
-
----
-
-## 4D. Token UX, NFT Utilities, Auth, Vault Access, and Transaction Experience
-
-### `Add-Token`
-- **URL:** https://github.com/parsec-wallet/Add-Token
-- **Quick summary:** Simple web3 dApp for suggesting a token to compatible wallets like MetaMask.
-- **Why it matters:** Good reference for user-friendly token onboarding and wallet-initiated asset discovery.
-
-### `watch-token`
-- **URL:** https://github.com/parsec-wallet/watch-token
-- **Quick summary:** DApp for suggesting and adding a token to compatible wallets.
-- **Why it matters:** Similar to `Add-Token`; useful for pattern comparison and simplified token-watch flows.
-
-### `vault-decryptor`
-- **URL:** https://github.com/parsec-wallet/vault-decryptor
-- **Quick summary:** Web app for decrypting MetaMask vault data.
-- **Why it matters:** Extremely relevant for understanding wallet vault serialization, recovery tooling, and security boundaries.
-
-### `bitauth`
-- **URL:** https://github.com/parsec-wallet/bitauth
-- **Quick summary:** Authentication with web services using Bitcoin-style cryptographic strategy.
-- **Why it matters:** Useful for Parsec-native authentication flows grounded in wallet signatures rather than passwords.
-
-### `bitpay-checkout-for-woocommerce`
-- **URL:** https://github.com/parsec-wallet/bitpay-checkout-for-woocommerce
-- **Quick summary:** WooCommerce integration for BitPay checkout.
-- **Why it matters:** Helpful for merchant-facing payment experience and commerce-oriented wallet interoperability.
-
-### `proxy-contract-wallet-example`
-- **URL:** https://github.com/parsec-wallet/proxy-contract-wallet-example
-- **Quick summary:** Example smart-contract setup mapping an end-user wallet to an ownable proxy wallet.
-- **Why it matters:** Important for delegated control, smart-wallet abstraction, and end-user proxy patterns.
-
-### `signature-minting-to-qr-code`
-- **URL:** https://github.com/parsec-wallet/signature-minting-to-qr-code
-- **Quick summary:** Signature-minting workflow tied to QR code output.
-- **Why it matters:** Interesting experimental reference for offline signing, attestations, or transferable proof UX.
-
-### `MintLIT`
-- **URL:** https://github.com/parsec-wallet/MintLIT
-- **Quick summary:** Encrypt data behind an NFT using Lit-oriented concepts.
-- **Why it matters:** Useful for token-gated encryption, access control, and crypto-native content permissions.
-
-### `eth-gas-price-suggestor`
-- **URL:** https://github.com/parsec-wallet/eth-gas-price-suggestor
-- **Quick summary:** Module for recommending default gas prices from recent successful transactions.
-- **Why it matters:** Directly relevant for wallet fee estimation and safe default gas selection.
-
----
-
-## 4E. Distributed Web, Sovereign Data, Offline-First Systems, and Alternative Network Surfaces
-
-### `hyperdrive-next`
-- **URL:** https://github.com/parsec-wallet/hyperdrive-next
-- **Quick summary:** Secure, real-time distributed file system.
-- **Why it matters:** Strategic reference for sovereign sync, distributed storage, and user-controlled data distribution.
-
-### `hypercore`
-- **URL:** https://github.com/parsec-wallet/hypercore
-- **Quick summary:** Secure, distributed append-only log.
-- **Why it matters:** Useful if Parsec later needs replicated event logs, wallet journaling, or offline-synchronizable state.
-
-### `earthstar`
-- **URL:** https://github.com/parsec-wallet/earthstar
-- **Quick summary:** Tool for private, undiscoverable, offline-first networks.
-- **Why it matters:** Very relevant to local-first / sovereign-first wallet data strategies.
-
-### `earthstar-fetch`
-- **URL:** https://github.com/parsec-wallet/earthstar-fetch
-- **Quick summary:** Earthstar fetch utility.
-- **Why it matters:** Small companion artifact that may inform content retrieval or transport within Earthstar-style systems.
-
-### `agregore-browser`
-- **URL:** https://github.com/parsec-wallet/agregore-browser
-- **Quick summary:** Minimal desktop browser for the distributed web.
-- **Why it matters:** Helpful for thinking about a wallet-plus-browser future, especially around distributed protocols and native dApp discovery.
-
----
-
-## 4F. Research, Standards, Books, and Experimental Context
-
-### `ethereumbook`
-- **URL:** https://github.com/parsec-wallet/ethereumbook
-- **Quick summary:** *Mastering Ethereum* source repository by Andreas M. Antonopoulos and Gavin Wood.
-- **Why it matters:** Foundational reading corpus for Ethereum wallet, key, transaction, and smart-contract architecture.
-
-### `Awesome-ETC`
-- **URL:** https://github.com/parsec-wallet/Awesome-ETC
-- **Quick summary:** Awesome-list resource collection for Ethereum Classic.
-- **Why it matters:** Helpful ecosystem map for ETC-oriented support or for comparative Ethereum-family design research.
-
-### `zksnarks_example`
-- **URL:** https://github.com/parsec-wallet/zksnarks_example
-- **Quick summary:** zkSNARK tutorial repository.
-- **Why it matters:** Research-oriented reference if Parsec later incorporates privacy proofs, verifiable attestations, or succinct-auth patterns.
-
-### `lightspeed`
-- **URL:** https://github.com/parsec-wallet/lightspeed
-- **Quick summary:** Light.js / THRUST-flavored experiment emphasizing speed-of-light execution.
-- **Why it matters:** Experimental and likely speculative, but potentially useful as a naming / concept artifact for performance-first wallet thinking.
-
----
-
-## 5. Practical Reuse Guidance for Parsec
-
-### Borrow directly at the idea/interface level
-- `chainlist`
-- `detect-provider`
-- `xchainjs-lib-1`
-- `safe-wallet-web`
-- `web-core-safe-webui`
-- `wallet.rs`
-- `vault-decryptor`
-- `bitcore`
-- `bitcore-p2p`
-- `EIPs`
-
-### Reimplement in-house for Parsec’s architecture
-Because Parsec is targeting **Tauri + Rust backend + zero-dependency TSX/CSS frontend + Tomb-backed local vault**, the right move is usually to **reimplement the good ideas**, not pull large runtime-heavy codebases directly.
-
-Especially true for:
-- `metamask-extension`
-- `wallet`
-- `keplr-wallet`
-- `avalanche-wallet`
-- `ArweaveWebWallet`
-- `gsn`
-- `ankr.js`
-- `Add-Token`
-- `watch-token`
-
-### Read strategically, not for direct inclusion
-- `ethereumbook`
-- `Awesome-ETC`
-- `zksnarks_example`
-- `slingshot`
-- `lightspeed`
-
----
-
-## 6. What Claude Should Notice
-
-Claude should recognize that this organization is not just “a bunch of crypto repos.” It is a **composite wallet intelligence set** covering:
-
-- classical UTXO systems
-- account-based smart-contract ecosystems
-- multisig and smart accounts
-- extension/provider patterns
-- hardware wallet bridges
-- distributed-web and offline-first infrastructure
-- wallet UX growth loops
-- standards and deep protocol references
-
-That combination makes it unusually useful for designing **Parsec as a universal sovereign wallet**.
-
----
-
-## 7. Closing Directive
-
-If this corpus is used to inform Parsec:
-
-- prefer **small, explicit interfaces**
-- keep **signing in Rust**
-- keep **UI dependency-free**
-- keep **chain support adapter-driven**
-- treat **vault design, import safety, and provider boundaries** as security-critical
-- extract **ideas and architecture**, not accidental complexity
-
-The right outcome is not to imitate any single upstream wallet.
-
-The right outcome is to synthesize a **cleaner, safer, more sovereign Parsec**.
+Find out what something costs without a key: `await createX402Client().quote(url)`.
+
+**Sell with it.** The same repository carries the seller half: a FastAPI dependency that answers
+`402` with the terms, verifies and settles through the facilitator, advertises each endpoint in the
+Bazaar catalogue, and prices every route from one hot-reloaded file:
+
+```python
+@app.post("/names/algo", dependencies=[Depends(x402_required("/names/algo"))])
+async def register_algo_name(order: NameOrder): ...
+```
+
+**In Parsec.** The x402 desk probes and pays any resource (GET or POST with a JSON body) with an explicit
+*Pay on* rail picker; `.algo Names` pays its BANKON fee this way.
+[Protocol and design](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/x402-integration.md) ·
+[every export and error](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/x402-api.md) ·
+[usage recipes](https://github.com/parsec-wallet/x402/blob/main/usage.md)
+
+## Where it stands
+
+Parsec is **alpha**, and says so. What is open is listed, not hidden:
+
+- The first mainnet x402 settlement through Parsec is the next step; until then everything is verified
+  against stubs, test shapes and live read endpoints, which is not the same as having settled.
+- The second-generation vault format (wrapped keys, per-entry derivation, Rust-enforced auto-lock) is
+  written and specified but not yet compiled in; today's auto-lock is a five-minute interface timer.
+- Parsec's destination is the [cypherpunk4096](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/cypherpunk4096.md)
+  standard, which is binary: all of it or none. Two commitments are not met yet — zero runtime
+  dependencies, and no floating point in any value path.
+
+## The repositories
+
+| | |
+|---|---|
+| [**PARSEC**](https://github.com/parsec-wallet/PARSEC) | The wallet: Tauri 2 desktop app and permaweb build. Start with [the docs index](https://github.com/parsec-wallet/PARSEC/blob/dev/docs/README.md). |
+| [**x402**](https://github.com/parsec-wallet/x402) | x402 on Algorand, standalone: the payer module (any wallet) and the seller middleware. Apache-2.0. |
+| [**ARCtestnetUI**](https://github.com/parsec-wallet/ARCtestnetUI) | A chain-agnostic EVM wallet module with a one-click Arc testnet USDC faucet. |
+
+<details>
+<summary><b>The reference library</b> — wallets and protocol stacks kept here to learn from</summary>
+
+<br>
+
+The rest of this organization is a working library: forks of wallets, chain clients and protocol
+tooling (Bitcoin, Litecoin, Safe, Pera, MetaMask, Avalanche, D'CENT, the xchain-accounts and lightspeed
+experiments and more), kept so that Parsec's design can be argued from real code rather than from
+memory. Nothing in the library is Parsec, and Parsec vendors none of it. A structured guide to the
+whole library, written for AI systems, is in [`corpus.prompt.md`](https://github.com/parsec-wallet/.github/blob/main/corpus.prompt.md).
+
+</details>
+
+## For machines
+
+Language models and agents: start at [`llms.txt`](https://github.com/parsec-wallet/.github/blob/main/llms.txt) — what Parsec is, where every
+document lives, and how to pay its endpoints.
+
+## Get in touch
+
+[sales@pythai.net](mailto:sales@pythai.net) · [bankon.pythai.net](https://bankon.pythai.net) ·
+security reports: see [SECURITY.md](https://github.com/parsec-wallet/PARSEC/blob/dev/SECURITY.md)
+
+<sub>Parsec is built by BANKON. Licensed by component: GPL-3.0-or-later for everything that holds or uses
+a key, Apache-2.0 for the rest, MIT for the server-side AO processes — per path in
+<a href="https://github.com/parsec-wallet/PARSEC/blob/dev/REUSE.toml">REUSE.toml</a>.</sub>
